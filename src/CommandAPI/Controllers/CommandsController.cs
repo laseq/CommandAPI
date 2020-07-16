@@ -20,6 +20,7 @@ namespace CommandAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Command>> GetCommandItems()
         {
+            // random comment
             return _context.CommandItems;
         }
 
