@@ -194,6 +194,7 @@ namespace CommandAPI.Tests
         // ACTION 3: CREATE A NEW RESOURCE
         
         // TEST 3.1 VALID OBJECT SUBMITTED - OBJECT COUNT INCREMENTS BY 1
+        [Fact]
         public void PostCommandItem_ObjectCountIncrements_WhenValidObject()
         {
             // Arrange
@@ -285,6 +286,7 @@ namespace CommandAPI.Tests
         }
 
         // TEST 4.3 INVALID OBJECT SUBMITTED - 400 RETURN CODE
+        [Fact]
         public void PutCommandItem_Returns400_WhenInvalidObject()
         {
             // Arrange
@@ -309,6 +311,7 @@ namespace CommandAPI.Tests
         }
 
         // TEST 4.4 INVALID OBJECT SUBMITTED - OBJECT REMAINS UNCHANGED
+        [Fact]
         public void PutCommandItem_AttributeUnchanged_WhenInvalidObject()
         {
             // Arrange
@@ -396,7 +399,7 @@ namespace CommandAPI.Tests
             var result = controller.DeleteCommandItem(-1);
 
             // Assert
-            Assert.IsType<NotFoundResult>(result.Result);
+            Assert.IsType<OkResult>(result.Result);
         }
 
         // TEST 5.4 INVALID OBJECT ID SUBMITTED - OBJECT COUNT REMAINS UNCHANGED
